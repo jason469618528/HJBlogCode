@@ -7,7 +7,7 @@ tags:
 
 ### 1 模板方案路径
 系统模板的路径（Xcode7）_Applications_Xcode.app_Contents_Developer_Library_Xcode_Templates_File Templates在这个目录下；
-![](/img/1693553-0bed79c964adb6dc.png)
+![](/img/1693553-98812f12b7414336.png)
 其中的Core Data、Other、Resource、Source和User Interface对应着
 ![](/img/1693553-0bed79c964adb6dc.png)
 ### BaseVC.xctemplate介绍
