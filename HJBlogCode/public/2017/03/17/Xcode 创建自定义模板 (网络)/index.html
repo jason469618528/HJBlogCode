@@ -30,7 +30,7 @@
   </section>
 
   <section class="article-entry">
-    <h3 id="1-模板方案路径"><a href="#1-模板方案路径" class="headerlink" title="1 模板方案路径"></a>1 模板方案路径</h3><p>系统模板的路径（Xcode7）_Applications_Xcode.app_Contents_Developer_Library_Xcode_Templates_File Templates在这个目录下；<br><img src="_images/Xcode 创建自定义模板 (来源网络" alt="">/1693553-98812f12b7414336.png)<br>其中的Core Data、Other、Resource、Source和User Interface对应着<br><img src="_images/Xcode 创建自定义模板 (来源网络" alt="">/1693553-0bed79c964adb6dc.png)</p>
+    <h3 id="1-模板方案路径"><a href="#1-模板方案路径" class="headerlink" title="1 模板方案路径"></a>1 模板方案路径</h3><p>系统模板的路径（Xcode7）_Applications_Xcode.app_Contents_Developer_Library_Xcode_Templates_File Templates在这个目录下；<br><img src="img/1693553-0bed79c964adb6dc.png" alt=""><br>其中的Core Data、Other、Resource、Source和User Interface对应着<br><img src="img/1693553-0bed79c964adb6dc.png" alt=""></p>
 <h3 id="BaseVC-xctemplate介绍"><a href="#BaseVC-xctemplate介绍" class="headerlink" title="BaseVC.xctemplate介绍"></a>BaseVC.xctemplate介绍</h3><p>假设已经将BaseVC.xctemplate放入了Source文件夹中，查看BaseVC.xctemplate中有<br>（1）BaseViewControllerObjective-C 文件夹<br>用来创建.h 和 .m文件。 其中文件夹的命名规范是[name]+Objective-C. 如果是创建swift修改为swift。<br>（2）BaseViewControllerXibObjective-C文件夹<br>用来创建.h，.m和.xib文件。其中文件夹的命名规范是[name]+XibObjective-C. swift类似。<br>（3）TemplateIcon图片<br>图片是用来显示在New File的菜单上的。任意放一个自己喜欢的图片，像素138*138即可。<br>（4）TemplateInfo.plist<br>配置文件。下面单独讲讲。</p>
 <h3 id="3-FILEBASENAME-h"><a href="#3-FILEBASENAME-h" class="headerlink" title="3.FILEBASENAME.h"></a>3.<strong><em>FILEBASENAME</em></strong>.h</h3><p>内容为</p>
 <p>  <strong><em>FILENAME</em></strong><br>  <strong><em>PROJECTNAME</em></strong></p>
@@ -71,7 +71,7 @@
 <p>#pragma mark - Privater Methods</p>
 <p>#pragma mark - Setter Getter Methods</p>
 <p>@end<br>按编程规范编写的，大家可以自行修改，New File后将自动生成你修改的内容。</p>
-<h3 id="5-TemplateInfo-plist"><a href="#5-TemplateInfo-plist" class="headerlink" title="5. TemplateInfo.plist"></a>5. TemplateInfo.plist</h3><p><img src="_images/Xcode 创建自定义模板 (来源网络" alt="">/1693553-0ed0fdac87c08112.png)<br>SortOrder 这个是排序的值，可以设置在界面中的摆放位置<br>Options中的Item0，Item1，Item2，Item3 对应了<br><img src="_images/Xcode 创建自定义模板 (来源网络" alt="">/1693553-d8e6c07058f379f0-1.png)<br>自定义的BaseViewController的类，当然可以使用系统或自己定义。<br>BaseViewController的后缀。选择后，自动在Class后面添加ViewController的后缀。<br>是否生成Xib文件，默认是ture。当选择了BaseViewController时，可以进行checkout，不然不可选，不生成Xib文件。</p>
+<h3 id="5-TemplateInfo-plist"><a href="#5-TemplateInfo-plist" class="headerlink" title="5. TemplateInfo.plist"></a>5. TemplateInfo.plist</h3><p><img src="https://github.com/jason469618528/HJBlogCode/blob/master/HJBlogCode/source/_images/Xcode%20%E5%88%9B%E5%BB%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E6%9D%BF%20(%E6%9D%A5%E6%BA%90%E7%BD%91%E7%BB%9C/1693553-0ed0fdac87c08112.png" alt=""><br>SortOrder 这个是排序的值，可以设置在界面中的摆放位置<br>Options中的Item0，Item1，Item2，Item3 对应了<br><img src="https://github.com/jason469618528/HJBlogCode/blob/master/HJBlogCode/source/_images/Xcode%20%E5%88%9B%E5%BB%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E6%9D%BF%20(%E6%9D%A5%E6%BA%90%E7%BD%91%E7%BB%9C/1693553-d8e6c07058f379f0-1.png" alt=""><br>自定义的BaseViewController的类，当然可以使用系统或自己定义。<br>BaseViewController的后缀。选择后，自动在Class后面添加ViewController的后缀。<br>是否生成Xib文件，默认是ture。当选择了BaseViewController时，可以进行checkout，不然不可选，不生成Xib文件。</p>
 
   </section>
 </article>
