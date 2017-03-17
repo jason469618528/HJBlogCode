@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>使用SourceTree&amp;Github 碰到的问题 | jason</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/app.css">
+  <!-- <link rel='stylesheet' href='http://fonts.useso.com/css?family=Source+Code+Pro'> -->
+  
+</head>
+
+<body>
+  <nav class="app-nav">
+  
+    
+      <a href="/.">home</a>
+    
+  
+</nav>
+
+  <main class="post">
+  <article>
+  <h1 class="article-title">
+    <a href="/2017/03/02/使用SourceTree&Github 碰到的问题/">使用SourceTree&Github 碰到的问题</a>
+  </h1>
+
+  <section class="article-meta">
+    <p class="article-date">2017年 03月 02日</p>
+  </section>
+
+  <section class="article-entry">
+    <h3 id="使用github-创建一个空白仓库时，使用sourcetree克隆下来的分支里面找不到master分支，错误提示：fatal-Not-a-valid-object-name-‘master’"><a href="#使用github-创建一个空白仓库时，使用sourcetree克隆下来的分支里面找不到master分支，错误提示：fatal-Not-a-valid-object-name-‘master’" class="headerlink" title="使用github 创建一个空白仓库时，使用sourcetree克隆下来的分支里面找不到master分支，错误提示：fatal: Not a valid object name: ‘master’"></a>使用github 创建一个空白仓库时，使用sourcetree克隆下来的分支里面找不到master分支，错误提示：fatal: Not a valid object name: ‘master’</h3><p><em>解决方案 :</em></p>
+<pre><code>1. `git init`  初始化这个仓库
+2. `git --bare init`  清空这个仓库
+</code></pre><p>这时打开SourceTree，<strong>未暂存文件</strong>里面会出来多个文件，提交这些文件后，master 就正常显示了。<br><strong>注：不知道是不是只有我碰到这类问题</strong></p>
+
+  </section>
+</article>
+
+  <div class="sharing grid">
+  <section class="profile grid-item grid">
+    <img class="avatar" src="/images/avatar.png" alt="avatar" />
+    <div class="grid-item">
+      <p class="title"> jason </p>
+      <p class="subtitle"> IOS developer </p>
+    <div>
+  </section>
+
+  <section class="share-btns">
+    <!-- <p> share it if you like it~ </p> -->
+    <a
+  class="twitter-share-button"
+  data-size="large"
+  data-via="DrakeLeung"
+  href="https://twitter.com/intent/tweet?text= id="使用github-创建一个空白"
+>
+  Tweet
+</a>
+
+<script>
+  window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  js.async = true;
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));
+</script>
+
+  </section>
+</div>
+
+
+  
+    
+<section class="article-comment">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+<script>
+  var disqus_shortname = 'jason';
+  
+  var disqus_url = 'http://yoursite.com/2017/03/02/使用SourceTree&amp;Github 碰到的问题/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+  
+</main>
+
+</body>
+</html>

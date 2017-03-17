@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>hello world | jason</title>
+  <title>IOS 开发经验总结(不定时更新) | jason</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="stylesheet" href="/css/app.css">
@@ -22,15 +22,16 @@
   <main class="post">
   <article>
   <h1 class="article-title">
-    <a href="/2017/03/02/hello-world/">hello world</a>
+    <a href="/2017/03/16/IOS 开发经验总结(不定时更新)/">IOS 开发经验总结(不定时更新)</a>
   </h1>
 
   <section class="article-meta">
-    <p class="article-date">March 02 2017</p>
+    <p class="article-date">2017年 03月 16日</p>
   </section>
 
   <section class="article-entry">
-    
+    <h2 id="使用Podfile管理Pods依赖库版本"><a href="#使用Podfile管理Pods依赖库版本" class="headerlink" title="使用Podfile管理Pods依赖库版本"></a>使用Podfile管理Pods依赖库版本</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">pod &apos;AFNetworking&apos;      //不显式指定依赖库版本，表示每次都获取最新版本    </div><div class="line">pod &apos;AFNetworking&apos;, &apos;2.0&apos;     //只使用2.0版本    </div><div class="line">pod &apos;AFNetworking&apos;, &apos;&gt; 2.0&apos;     //使用高于2.0的版本    </div><div class="line">pod &apos;AFNetworking&apos;, &apos;&gt;= 2.0&apos;     //使用大于或等于2.0的版本    </div><div class="line">pod &apos;AFNetworking&apos;, &apos;&lt; 2.0&apos;     //使用小于2.0的版本    </div><div class="line">pod &apos;AFNetworking&apos;, &apos;&lt;= 2.0&apos;     //使用小于或等于2.0的版本    </div><div class="line">pod &apos;AFNetworking&apos;, &apos;~&gt; 0.1.2&apos;     //使用大于等于0.1.2但小于0.2的版本    </div><div class="line">pod &apos;AFNetworking&apos;, &apos;~&gt;0.1&apos;     //使用大于等于0.1但小于1.0的版本    </div><div class="line">pod &apos;AFNetworking&apos;, &apos;~&gt;0&apos;     //高于0的版本，写这个限制和什么都不写是一个效果，都表示使用最新版本</div></pre></td></tr></table></figure>
+
   </section>
 </article>
 
@@ -49,7 +50,7 @@
   class="twitter-share-button"
   data-size="large"
   data-via="DrakeLeung"
-  href="https://twitter.com/intent/tweet?text="
+  href="https://twitter.com/intent/tweet?text= id="使用Podfile管理Pods"
 >
   Tweet
 </a>
@@ -89,7 +90,7 @@
 <script>
   var disqus_shortname = 'jason';
   
-  var disqus_url = 'http://yoursite.com/2017/03/02/hello-world/';
+  var disqus_url = 'http://yoursite.com/2017/03/16/IOS 开发经验总结(不定时更新)/';
   
   (function(){
     var dsq = document.createElement('script');

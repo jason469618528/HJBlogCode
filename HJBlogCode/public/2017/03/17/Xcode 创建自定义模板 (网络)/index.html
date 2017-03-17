@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Xcode 创建自定义模板 (来源网络) | jason</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/app.css">
+  <!-- <link rel='stylesheet' href='http://fonts.useso.com/css?family=Source+Code+Pro'> -->
+  
+</head>
+
+<body>
+  <nav class="app-nav">
+  
+    
+      <a href="/.">home</a>
+    
+  
+</nav>
+
+  <main class="post">
+  <article>
+  <h1 class="article-title">
+    <a href="/2017/03/17/Xcode 创建自定义模板 (网络)/">Xcode 创建自定义模板 (来源网络)</a>
+  </h1>
+
+  <section class="article-meta">
+    <p class="article-date">2017年 03月 17日</p>
+  </section>
+
+  <section class="article-entry">
+    <h3 id="1-模板方案路径"><a href="#1-模板方案路径" class="headerlink" title="1 模板方案路径"></a>1 模板方案路径</h3><p>系统模板的路径（Xcode7）_Applications_Xcode.app_Contents_Developer_Library_Xcode_Templates_File Templates在这个目录下；<br><img src="_images/Xcode 创建自定义模板 (来源网络" alt="">/1693553-98812f12b7414336.png)<br>其中的Core Data、Other、Resource、Source和User Interface对应着<br><img src="_images/Xcode 创建自定义模板 (来源网络" alt="">/1693553-0bed79c964adb6dc.png)</p>
+<h3 id="BaseVC-xctemplate介绍"><a href="#BaseVC-xctemplate介绍" class="headerlink" title="BaseVC.xctemplate介绍"></a>BaseVC.xctemplate介绍</h3><p>假设已经将BaseVC.xctemplate放入了Source文件夹中，查看BaseVC.xctemplate中有<br>（1）BaseViewControllerObjective-C 文件夹<br>用来创建.h 和 .m文件。 其中文件夹的命名规范是[name]+Objective-C. 如果是创建swift修改为swift。<br>（2）BaseViewControllerXibObjective-C文件夹<br>用来创建.h，.m和.xib文件。其中文件夹的命名规范是[name]+XibObjective-C. swift类似。<br>（3）TemplateIcon图片<br>图片是用来显示在New File的菜单上的。任意放一个自己喜欢的图片，像素138*138即可。<br>（4）TemplateInfo.plist<br>配置文件。下面单独讲讲。</p>
+<h3 id="3-FILEBASENAME-h"><a href="#3-FILEBASENAME-h" class="headerlink" title="3.FILEBASENAME.h"></a>3.<strong><em>FILEBASENAME</em></strong>.h</h3><p>内容为</p>
+<p>  <strong><em>FILENAME</em></strong><br>  <strong><em>PROJECTNAME</em></strong></p>
+<p>  Created by <strong><em>FULLUSERNAME</em></strong> on <strong><em>DATE</em></strong>.<br><strong><em>COPYRIGHT</em></strong></p>
+<p>#import “<strong>_VARIABLE<em>cocoaTouchSubclass</em></strong>.h”</p>
+<p>@interface <strong><em>FILEBASENAMEASIDENTIFIER</em></strong> : <strong>_VARIABLE<em>cocoaTouchSubclass</em></strong></p>
+<p>@end<br>里面的参数在生成h文件时，系统会替换了输入的文件名。具体都是什么含义，大家可以自行Google了。</p>
+<h3 id="4-FILEBASENAME-m"><a href="#4-FILEBASENAME-m" class="headerlink" title="4. FILEBASENAME.m"></a>4. <strong><em>FILEBASENAME</em></strong>.m</h3><p>内容为</p>
+<p>  <strong><em>FILENAME</em></strong><br>  <strong><em>PROJECTNAME</em></strong></p>
+<p>  Created by <strong><em>FULLUSERNAME</em></strong> on <strong><em>DATE</em></strong>.<br><strong><em>COPYRIGHT</em></strong></p>
+<p>#import “<strong><em>FILEBASENAME</em></strong>.h”<br> Controllers<br> Model<br> Views</p>
+<p>#define &lt;#macro#&gt; &lt;#value#&gt;</p>
+<p>@interface <strong><em>FILEBASENAMEASIDENTIFIER</em></strong> ()</p>
+<p>@property (nonatomic, strong) &lt;#type#&gt; *&lt;#name#&gt;<br>@end<br>@implementation <strong><em>FILEBASENAMEASIDENTIFIER</em></strong></p>
+<p>#pragma mark - View Controller LifeCyle</p>
+<ul>
+<li>[ ] (instancetype)initWithCoder:(NSCoder *)coder<br>{<br>  self = [super initWithCoder:coder];<br>  if (self) {<br>  }<br>  return self;<br>}   </li>
+<li><p>[ ] (void)viewDidLoad<br>{<br>  [super viewDidLoad];</p>
+<p>  [self initialNavigationBar];<br>}</p>
+</li>
+<li>[ ] (void)viewDidAppear:(BOOL)animated<br>{<br>  [super viewDidAppear:animated];<br>}</li>
+<li><p>[ ] (void)viewWillDisappear:(BOOL)animated<br>{<br>  [super viewWillDisappear:animated];<br>}</p>
+</li>
+<li><p>[ ] (void)didReceiveMemoryWarning<br>{<br>  [super didReceiveMemoryWarning];</p>
+<p>  [[SDImageCache sharedImageCache] setValue:nil forKey:@”memCache”];<br>}</p>
+</li>
+<li><p>[ ] (void)dealloc<br>{<br>  [[NSNotificationCenter defaultCenter] removeObserver:self];<br>}<br>#pragma mark - Override</p>
+</li>
+</ul>
+<p>#pragma mark - Initial Methods</p>
+<ul>
+<li>[ ] (void)initialNavigationBar<br>{<br>  self.navigationItem.title = &lt;#title#&gt;;<br>}</li>
+</ul>
+<p>#pragma mark - Target Methods</p>
+<p>#pragma mark - Notification Methods</p>
+<p>#pragma mark - KVO Methods</p>
+<p>#pragma mark - UITableViewDelegate, UITableViewDataSource</p>
+<p>#pragma mark - Privater Methods</p>
+<p>#pragma mark - Setter Getter Methods</p>
+<p>@end<br>按编程规范编写的，大家可以自行修改，New File后将自动生成你修改的内容。</p>
+<h3 id="5-TemplateInfo-plist"><a href="#5-TemplateInfo-plist" class="headerlink" title="5. TemplateInfo.plist"></a>5. TemplateInfo.plist</h3><p><img src="_images/Xcode 创建自定义模板 (来源网络" alt="">/1693553-0ed0fdac87c08112.png)<br>SortOrder 这个是排序的值，可以设置在界面中的摆放位置<br>Options中的Item0，Item1，Item2，Item3 对应了<br><img src="_images/Xcode 创建自定义模板 (来源网络" alt="">/1693553-d8e6c07058f379f0-1.png)<br>自定义的BaseViewController的类，当然可以使用系统或自己定义。<br>BaseViewController的后缀。选择后，自动在Class后面添加ViewController的后缀。<br>是否生成Xib文件，默认是ture。当选择了BaseViewController时，可以进行checkout，不然不可选，不生成Xib文件。</p>
+
+  </section>
+</article>
+
+  <div class="sharing grid">
+  <section class="profile grid-item grid">
+    <img class="avatar" src="/images/avatar.png" alt="avatar" />
+    <div class="grid-item">
+      <p class="title"> jason </p>
+      <p class="subtitle"> IOS developer </p>
+    <div>
+  </section>
+
+  <section class="share-btns">
+    <!-- <p> share it if you like it~ </p> -->
+    <a
+  class="twitter-share-button"
+  data-size="large"
+  data-via="DrakeLeung"
+  href="https://twitter.com/intent/tweet?text= id="1-模板方案路径"><a hr"
+>
+  Tweet
+</a>
+
+<script>
+  window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  js.async = true;
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));
+</script>
+
+  </section>
+</div>
+
+
+  
+    
+<section class="article-comment">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+<script>
+  var disqus_shortname = 'jason';
+  
+  var disqus_url = 'http://yoursite.com/2017/03/17/Xcode 创建自定义模板 (网络)/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+  
+</main>
+
+</body>
+</html>
