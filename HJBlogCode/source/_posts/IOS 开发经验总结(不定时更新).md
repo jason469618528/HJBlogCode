@@ -35,3 +35,7 @@ UIImage *selectedImage=[UIImage imageNamed: @"btn_nav_share_lawyer"];
         selectedImage = [selectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
   创建baritem
  shareBarBtn = [[UIBarButtonItem alloc] initWithImage:selectedImage style:UIBarButtonItemStyleDone target:self action:@selector(shareAction)];
+
+### 4.iOS右滑返回过程中正在播放的视频卡顿 (pop 手势 AVPlayer 卡顿)
+原因：系统pop手势和AVPlayer冲突
+解决方案：简单粗暴点就是在-viewWillDisappear：中 [self.player pause],复杂点就是自己实现pop动画，可以彻底解决这个问题。
