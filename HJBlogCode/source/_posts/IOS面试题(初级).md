@@ -36,7 +36,7 @@ tags:
 30. 什么是谓词?
 31. iOS 中的多线程
 32. 谈谈Object-C的内存管理方式及过程？
-33. Object-C有多继承吗？没有的话用什么代替？cocoa 中所有的类都是NSObject 的子类
+33. Object-C有多继承吗？没有的话用什么代替？cocoa 中所有的类都是NSObject 的子类。
 
 
 
